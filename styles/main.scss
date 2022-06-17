@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import "variables";
+@import "navbar";
+@import "overlay";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: {
+        size: $fontSizeReg;
+        family: $fontFamilyPrim;
+    }
+    color: $fontColorPrim;
+    background-color: $backgroundColorPrim;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+

@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+.topnav {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 20px;
+}
+.topnav .topnav_logo {
+  margin-left: 10px;
+}
+.topnav .topnav_link_container {
+  margin-right: 40px;
+}
+.topnav .topnav_link_container a {
+  color: rgb(0, 255, 13);
+  margin-left: 15px;
+}
+
+#overlay {
+  opacity: 1;
+  background-color: rgb(12, 39, 0);
+  position: absoute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9998;
+}
+
+#text {
+  z-index: 9999;
+  color: rgb(0, 255, 13);
+}
+
+.blink_cursor {
+  opacity: 1;
+  margin-bottom: -2px;
+  height: 15px;
+  margin-left: -5px;
+  border-left: 7px solid yellow;
+  -webkit-animation: blink_cursor 0.9s steps(2, start) infinite;
+          animation: blink_cursor 0.9s steps(2, start) infinite;
+  z-index: 9999;
+}
+
+@-webkit-keyframes blink_cursor {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes blink_cursor {
+  to {
+    visibility: hidden;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Ubuntu";
+  color: rgb(50, 158, 0);
+  background-color: rgb(12, 39, 0);
+}
+
+a {
+  text-decoration: none;
+}/*# sourceMappingURL=main.css.map */
