@@ -16,7 +16,7 @@
   margin-left: 15px;
 }
 
-#overlay {
+#terminal_overlay {
   opacity: 1;
   background-color: rgb(12, 39, 0);
   position: absoute;
@@ -26,17 +26,20 @@
   z-index: 9998;
 }
 
-#text {
+#terminal_text {
   z-index: 9999;
   color: rgb(0, 255, 13);
+  overflow: visible;
+  margin-left: 30%;
+  margin-top: 10%;
 }
 
-.blink_cursor {
+.terminal_cursor {
   opacity: 1;
   margin-bottom: -2px;
   height: 15px;
-  margin-left: -5px;
-  border-left: 7px solid yellow;
+  margin-left: -1px;
+  border-right: 7px solid rgb(0, 255, 13);
   -webkit-animation: blink_cursor 0.9s steps(2, start) infinite;
           animation: blink_cursor 0.9s steps(2, start) infinite;
   z-index: 9999;
