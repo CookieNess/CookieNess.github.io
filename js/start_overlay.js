@@ -1,18 +1,20 @@
-let i = -1;
-let j = 0;
-const terminalTextID = "#terminal_text";
+let i = -1; //loop through terminal text
+let lineNumber = 0; //what line the terminal is on
 let terminalText = '';
 const userAgent = navigator.userAgent;
+const totalTerminalLines = 4;
+const terminalTextID = "#terminal_text"; //id for the p tag to contain terminal text
 
 $(document).ready(function () {
     const docHeight = $(document).height();
     $(terminalTextID).height(docHeight);
-    createTerminalText();
+    getBrowserInfo();
     $("body").append("<div id='terminal_overlay'><p id='terminal_text'>&gt; </p><span class='terminal_cursor'>&#32; </span></div>");
-    typeText();
+    typeTerminalText();
 });
 
-function createTerminalText() {
+//function gets browser info from navigator.userAgent
+function getBrowserInfo() {
     let browser = '';
     let browserVersion = '';
     const chromeReg = /chrome|chromium|crios/i;
@@ -43,28 +45,37 @@ function createTerminalText() {
 
 }
 
+//function finds version of used browser
 function getBrowserVersion(browserReg) {
     return (userAgent.split((userAgent.match(browserReg) + '/'))[1]).split(' ')[0];
 }
 
-function typeText() {
+//function types out text in terminal
+function typeTerminalText() {
+    if (lineNumber == 1) {
+        terminalText = 'Website Created by Frederik Kjaergaard. All rights reserved.';
+    } else if (lineNumber == 2 || lineNumber == 3) {
+        terminalText = ' ';
+    } else if (lineNumber == 4) {
+        terminalText = 'start www.frederikkjaergaard.net';
+    }
+
     if (i < terminalText.length) {
         setTimeout(function () {
             $(terminalTextID).get(0).innerHTML += terminalText.charAt(i) + "<span class='terminal_cursor'>&#32;</span>";
         }, 5);
         $(".terminal_cursor").remove();
         i++;
-        setTimeout(typeText, 50);
+        setTimeout(typeTerminalText, 50);
     } else {
-        setTimeout(function(){$(terminalTextID).append("<br>&gt; ")}, 400);
         setTimeout(function() {
-            if (j < 2) {
+            if (lineNumber < totalTerminalLines) {
+                $(terminalTextID).append("<br>&gt; ");
                 i = -1;
-                console.log(j);
-                j++;
-                setTimeout(typeText(), 400);
+                lineNumber++;
+                setTimeout(typeTerminalText(), 0); //setTimeout to wait for function to write everyhting
             }
-        }, 400);
+        }, 1000);
 
         
     }
