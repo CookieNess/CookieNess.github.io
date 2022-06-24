@@ -30,8 +30,8 @@
   z-index: 9999;
   color: rgb(0, 255, 13);
   overflow: visible;
-  margin-left: 30%;
-  margin-top: 10%;
+  padding-left: 30%;
+  padding-top: 10%;
 }
 
 .terminal_cursor {

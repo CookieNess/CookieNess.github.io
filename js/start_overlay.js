@@ -2,13 +2,14 @@ let i = -1; //loop through terminal text
 let lineNumber = 0; //what line the terminal is on
 let terminalText = '';
 const userAgent = navigator.userAgent;
-const totalTerminalLines = 4;
+const totalTerminalLines = 5;
 const terminalTextID = "#terminal_text"; //id for the p tag to contain terminal text
 
 $(document).ready(function () {
     const docHeight = $(document).height();
-    $(terminalTextID).height(docHeight);
+    $("#terminal_overlay").height(docHeight);
     getBrowserInfo();
+    $("#content").hide();
     $("body").append("<div id='terminal_overlay'><p id='terminal_text'>&gt; </p><span class='terminal_cursor'>&#32; </span></div>");
     typeTerminalText();
 });
@@ -45,7 +46,12 @@ function getBrowserInfo() {
 
 }
 
-//function finds version of used browser
+
+/**
+ * @param  {} browserReg
+ * 
+ * function finds version of used browser
+ */
 function getBrowserVersion(browserReg) {
     return (userAgent.split((userAgent.match(browserReg) + '/'))[1]).split(' ')[0];
 }
@@ -58,6 +64,10 @@ function typeTerminalText() {
         terminalText = ' ';
     } else if (lineNumber == 4) {
         terminalText = 'start www.frederikkjaergaard.net';
+    } else if (lineNumber == 5) {
+        $("#terminal_overlay").remove();
+        $("#content").fadeIn(1000);
+        return;
     }
 
     if (i < terminalText.length) {
@@ -75,7 +85,7 @@ function typeTerminalText() {
                 lineNumber++;
                 setTimeout(typeTerminalText(), 0); //setTimeout to wait for function to write everyhting
             }
-        }, 1000);
+        }, 1000); //setTimeout to wait before writing next line, def = 1 sec (1000 units)
 
         
     }
