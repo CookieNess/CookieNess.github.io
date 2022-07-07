@@ -14,7 +14,9 @@ $(document).ready(function () {
     typeTerminalText();
 });
 
-//function gets browser info from navigator.userAgent
+/**
+ * function gets browser info from navigator.userAgent
+ */
 function getBrowserInfo() {
     let browser = '';
     let browserVersion = '';
@@ -78,7 +80,7 @@ function typeTerminalText() {
         i++;
         setTimeout(typeTerminalText, 50);
     } else {
-        setTimeout(function() {
+        setTimeout(function () {
             if (lineNumber < totalTerminalLines) {
                 $(terminalTextID).append("<br>&gt; ");
                 i = -1;
@@ -87,6 +89,5 @@ function typeTerminalText() {
             }
         }, 1000); //setTimeout to wait before writing next line, def = 1 sec (1000 units)
 
-        
     }
 }
