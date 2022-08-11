@@ -1,5 +1,25 @@
-$backgroundColorPrim: rgb(12, 39, 0);
+// Variables
+$backgroundColorPrim: black;
+$transitionPrim: 0.5s ease-in-out;
+
 $fontFamilyPrim: 'Ubuntu';
 $fontSizeReg: clamp(0.9rem ,1.1rem, 1.2rem);
 $fontColorPrim: rgb(50, 158, 0);
-$fontColorHighlight: rgb(0, 255, 13);
+$fontColorHighlight: #00ff0d;
+
+$fontSizeXXS: 12px;
+$fontSizeXS: 13px;
+$fontSizeS: 14px;
+$fontSizeM: 16px;
+$fontSizeL: 18px;
+$fontSizeXL: 20px;
+$fontSizeXXL: 22px;
+$fontSizeHeader: 32px;
+
+// Mixins
+@mixin flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}

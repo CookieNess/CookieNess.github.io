@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="styles/main.css">
     <title>Portfolio</title>
 </head>
@@ -14,39 +15,94 @@
             <a href="#home">PIC</a>
         </div>
         <div class="topnav_link_container">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#conatct">Contact</a>
+            <a href="#about">.about()</a>
+            <a href="#skills">.skills()</a>
+            <a href="#experience">.experience()</a>
+            <a href="#projects">.projects()</a>
+            <a href="#conatct">.contact()</a>
         </div>
     </div>
-    <section class="start_sec">
+    <div class="content">
+        <section class="home_sec">
+            <p class="heading_text"><span>&gt; hello </span><span>world</span></p>
+            <p class="desc_text">
+                <span>&gt;</span> My name is Frederik Kjærgaard (Kjaergaard for English). <br><br> 
+                <span>&gt;</span> I am a Danish software engineering student. <br><br> 
+                <span>&gt;</span> I specialise in full-stack programming. <br><br>
+                <span>&gt;</span> I love everything from front-end to back-end, database-systems and more.
+                
+            </p>
+        </section>
+        <section class="about_sec">
+            <h2><span>&gt;</span> &nbsp; who_am_i</h2>
+            <div class="inner">
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. <br><br> 
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+                <div class="headshot_container">
+                    <img src="img/headshot.jpg" id="headshot" alt="Picture of Frederik Kjaergaard">
+                    <div></div>
+                </div>
+            </div>
+        </section>
 
-    </section>
-    <section class="about_sec">
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <img src="img/headshot.jpg" alt="Picture of Frederik Kjaergaard">
-    </section>
-    <section class="skills_sec">
-
-    </section>
-    <section class="experience_sec">
-
-    </section>
-    <section class="projects_sec">
-
-    </section>
-    <section class="contact_sec">
-
-    </section>
+        <section class="skills_sec">
+            <h2><span>&gt;</span> &nbsp; my_skills</h2>
+            <div class="skills_container">
+                <div class="header1 header">
+                    <p>Technology</p>
+                </div>
+                <div class="text1 text">
+                    <p>Java</p>
+                </div>
+                <div class="text2 text">
+                    <p>Python</p>
+                </div>
+                <div class="text3 text">
+                    <p>SQL</p>
+                </div>
+                <div class="text4 text">
+                    <p>C#</p>
+                </div>
+                <div class="text5 text">
+                    <p>HTML/CSS</p>
+                </div>
+                <div class="text6 text">
+                    <p>JavaScript</p>
+                </div>
+                <div class="text7 text">
+                    <p>Dart</p>
+                </div>
+                <div class="header2 header">
+                    <p>Beginner</p>
+                </div>
+                <div class="header3 header">
+                    <p>Proficient</p>
+                </div>
+                <div class="header4 header">
+                    <p>Expert</p>
+                </div>
+                <div class="skill_level_con" id="skillContainer">
+                </div>
+            </div>
+            
+        </section>
+        <section class="experience_sec">
+    
+        </section>
+        <section class="projects_sec">
+    
+        </section>
+        <section class="contact_sec">
+    
+        </section>
+    </div>
+    
     <footer>
 
     </footer>
