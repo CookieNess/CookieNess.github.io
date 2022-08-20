@@ -51,6 +51,10 @@
             height: 300px;
             box-shadow: 20px 20px $backgroundColorPrim, 20px 20px 0 2px $fontColorHighlight;
             transition: box-shadow $transitionPrim;
+            @media(max-width: 400px) {
+                width: 200px;
+                height: 200px;
+            }
             img {
                 display: block;
                 position: absolute;
@@ -94,40 +98,15 @@
     }
 }
 
-/* .skills_container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    .info_column {
-        p {
-            margin-left: 10px;
-        }
+.skills_sec {
+    h2 {
+        font-size: clamp($fontSizeXL, 6vw, $fontSizeHeader);
     }
-    .column {
-        border: 1px solid white;
-        .header_skills {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            color: $fontColorHighlight;
-            font-size: $fontSizeXL !important;
-        }
-        p {
-            margin-top: 30px;
-        }
-    }
-    #expert {
-        grid-column-start: 2;
-        grid-column-end: 4;
-    }
-
-} */
-
+}
 .skills_container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: 20% 80%;
     grid-row-gap: 0;
     grid-column-gap: 0;
     .header1 {grid-area: 1 / 1 / 2 / 2;}
@@ -135,13 +114,6 @@
     .header3 {grid-area: 1 / 3 / 2 / 4;}
     .header4 {grid-area: 1 / 4 / 2 / 5;}
 
-    .text1{grid-area: 2 / 1 / 3 / 2;}
-    .text2{grid-area: 3 / 1 / 4 / 2;}
-    .text3{grid-area: 4 / 1 / 5 / 2;}
-    .text4{grid-area: 5 / 1 / 6 / 2;}
-    .text5{grid-area: 6 / 1 / 7 / 2;}
-    .text6{grid-area: 7 / 1 / 8 / 2;}
-    .text7{grid-area: 8 / 1 / 9 / 2;}
     .skill_level_con {grid-area: 2 / 2 / 9 / 5;}
     .header {
         margin-bottom: 20px;
@@ -151,13 +123,39 @@
         margin: 0;
         color: $fontColorHighlight;
         font-size: $fontSizeXL !important;
+        @media(max-width: 700px) {
+            font-size: $fontSizeL !important;
+        }
+        @media(max-width: 580px) {
+            font-size: $fontSizeM !important;
+        }
+        @media(max-width: 400px) {
+            font-size: $fontSizeS !important;
+        }
     }
-    .text {
+    .skill_name {
         margin-left: 10px;
+        border-right: 1px solid $fontColorPrim;
+        padding-bottom: 20px;
+        white-space: nowrap;
+        padding-right: 5px;
+        @media(max-width: 580px) {
+            font-size: $fontSizeS !important;
+        }
+        @media(max-width: 400px) {
+            font-size: $fontSizeXS !important;
+        }
     }
     .skill_level_con {
         p {
             margin-bottom: 20px;
+            margin-left: 5px;
+            @media(max-width: 580px) {
+                font-size: $fontSizeS !important;
+            }
+            @media(max-width: 400px) {
+                font-size: $fontSizeXS !important;
+            }
         }
     }
 

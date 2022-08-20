@@ -42,7 +42,7 @@ function getBrowserInfo() {
         browserVersion = getBrowserVersion(operaReg);
     } else {
         browser = "What Browser Is This?";
-        browserVersion = "Version What?"
+        browserVersion = "What?"
     }
     terminalText = browser + ' [Version ' + browserVersion + ']';
 

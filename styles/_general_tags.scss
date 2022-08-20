@@ -31,6 +31,7 @@ h2 { // Section headers
     font-weight: lighter;
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
     span {
         font-weight: bold;
         color: $fontColorHighlight;
@@ -52,4 +53,10 @@ section {
     @media (max-width: 930px) {
         padding: 0 100px;
     }
+    @media (max-width: 600px) {
+        padding: 0 30px;
+    } 
+    // @media (max-width: 380px) {
+    //     padding: 0 10px;
+    // }
 }
