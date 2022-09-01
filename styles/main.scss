@@ -13,7 +13,7 @@
     min-height: 100vh;
     padding: 0;
     .heading_text {
-        font-size: clamp(40px, 10vw, 80px);
+        font-size: clamp($fontSizeXXL, 13vw, 80px);
         font-weight: 400;
         line-height: 1.1;
         margin: 0 0 50px 0;
@@ -22,9 +22,12 @@
     .desc_text {
         max-width: 600px;
     }
-    span {
-        font-weight: 400;
+    span:not(.intro){
+        font-weight: bold;
         color: $fontColorHighlight;
+    }
+    .intro {
+        color: $fontColorBetween;
     }
 }
 
@@ -32,12 +35,8 @@
 .about_sec {
     max-width: 1200px;
     display: block;
-    h2 {
-        display: flex;
-        align-items: center;
-        position: relative;
-        width: 100%;
-        font-size: clamp($fontSizeXL, 6vw, $fontSizeHeader);
+    @media (max-width: 400px) {
+        font-size: $fontSizeM;
     }
     .inner {
         display: grid;
@@ -99,8 +98,15 @@
 }
 
 .skills_sec {
-    h2 {
-        font-size: clamp($fontSizeXL, 6vw, $fontSizeHeader);
+    padding-left: -50px;
+    padding-right: -50px;
+    p { 
+        @media(max-width: 580px) {
+            font-size: $fontSizeS !important;
+        }
+        @media(max-width: 400px) {
+            font-size: $fontSizeXS !important;
+        }
     }
 }
 .skills_container {
@@ -109,10 +115,10 @@
     grid-template-rows: 20% 80%;
     grid-row-gap: 0;
     grid-column-gap: 0;
-    .header1 {grid-area: 1 / 1 / 2 / 2;}
-    .header2 {grid-area: 1 / 2 / 2 / 3;}
-    .header3 {grid-area: 1 / 3 / 2 / 4;}
-    .header4 {grid-area: 1 / 4 / 2 / 5;}
+    .tech_header {grid-area: 1 / 1 / 2 / 2;}
+    .beginner_header {grid-area: 1 / 2 / 2 / 3;}
+    .proficient_header {grid-area: 1 / 3 / 2 / 4;}
+    .expert_header {grid-area: 1 / 4 / 2 / 5;}
 
     .skill_level_con {grid-area: 2 / 2 / 9 / 5;}
     .header {
@@ -130,13 +136,23 @@
             font-size: $fontSizeM !important;
         }
         @media(max-width: 400px) {
-            font-size: $fontSizeS !important;
+            font-size: $fontSizeXS !important;
+
         }
+    }
+    .tech_header, .skill_name {
+        border-right: 1px solid $fontColorPrim;
+    }
+    .beginner_header {
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+    .proficient_header {
+        margin-right: 2px;
     }
     .skill_name {
         margin-left: 10px;
-        border-right: 1px solid $fontColorPrim;
-        padding-bottom: 20px;
+        padding-top: 15px;
         white-space: nowrap;
         padding-right: 5px;
         @media(max-width: 580px) {
@@ -148,7 +164,7 @@
     }
     .skill_level_con {
         p {
-            margin-bottom: 20px;
+            margin-top: 15px;
             margin-left: 5px;
             @media(max-width: 580px) {
                 font-size: $fontSizeS !important;
@@ -158,6 +174,109 @@
             }
         }
     }
+}
 
-
+.experience_sec {
+    max-width: 700px !important;
+    .experience_container {
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .experience_name_column {
+            p {
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                    transition: 0.2s ease-in-out;
+                    @include jobSelector;
+                    cursor: pointer;
+                }
+                &:not(:hover) {
+                    transition: 0.2s ease-in-out;
+                }
+            }
+            .job_selected {
+                @include jobSelector;
+            }
+        }
+        .experience_desc {
+            .job_desc_header {
+                color: $fontColorPrim;
+            }
+            li {
+                list-style-type: "";
+                line-height: 2rem;
+                &::before {
+                    content: '>';
+                    color: $fontColorHighlight;
+                }
+            }
+            ul > li {
+                margin-left: 25px;
+            }
+            .job_tech_con {
+                display: flex;
+                min-width: 50%;    
+                div {
+                    flex: 1;
+                }
+            }
+            #techHeader {
+                margin-top: 20px;
+            }
+        }
+    }
+    @media (max-width: 850px) {
+        .experience_container {
+            width: 100%;
+            height: 100%;
+            min-width: 100%;
+            display: block;
+            .experience_name_column {
+                width: 70vw;
+                height: 100%;
+                display: flex;
+                overflow-x: auto;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                &::-webkit-scrollbar {
+                    height: 5px;
+                    
+                }
+                &::-webkit-scrollbar-track {
+                    background: black;
+                    padding-top: 50px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: $fontColorPrim;
+                    outline: 1px solid $fontColorPrim;
+                    border-radius: 5px;
+                }
+                p {
+                    white-space: nowrap;
+                    font-size: $fontSizeM;
+                }
+            }
+        }
+    }
+    @media (max-width: 500px) {
+        .experience_name_column {
+            p {
+                font-size: $fontSizeS;
+                padding: 10px !important;
+            }
+        }
+        .job_tech_con {
+            display: block !important;
+            min-width: 50%;
+        }
+        .experience_desc {
+            font-size: $fontSizeM;
+        }
+    }
 }

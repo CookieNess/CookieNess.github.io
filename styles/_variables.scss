@@ -3,9 +3,9 @@ $backgroundColorPrim: black;
 $transitionPrim: 0.5s ease-in-out;
 
 $fontFamilyPrim: 'Ubuntu';
-$fontSizeReg: clamp(0.9rem ,1.1rem, 1.2rem);
-$fontColorPrim: rgb(50, 158, 0);
-$fontColorHighlight: #00ff0d;
+$fontColorPrim: #008F11;
+$fontColorHighlight: #00FF41;
+$fontColorBetween: rgb(71, 224, 0);
 
 $fontSizeXXS: 12px;
 $fontSizeXS: 13px;
@@ -22,4 +22,10 @@ $fontSizeHeader: 32px;
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+
+@mixin jobSelector {
+    background-color: $fontColorHighlight;
+    color: black;
+    font-weight: bold;
 }

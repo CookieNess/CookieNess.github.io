@@ -14,7 +14,7 @@
   margin-right: 40px;
 }
 .topnav .topnav_link_container a {
-  color: #00ff0d;
+  color: #00FF41;
   margin-left: 15px;
 }
 
@@ -30,7 +30,7 @@
 
 #terminal_text {
   z-index: 9999;
-  color: #00ff0d;
+  color: #00FF41;
   overflow: visible;
   padding-left: 30%;
   padding-top: 10%;
@@ -41,7 +41,7 @@
   margin-bottom: -2px;
   height: 15px;
   margin-left: -1px;
-  border-right: 7px solid #00ff0d;
+  border-right: 7px solid #00FF41;
   -webkit-animation: blink_cursor 0.9s steps(2, start) infinite;
           animation: blink_cursor 0.9s steps(2, start) infinite;
   z-index: 9999;
@@ -68,7 +68,7 @@ body {
   font-size: 18px;
   font-family: "Ubuntu";
   line-height: 1.5;
-  color: rgb(50, 158, 0);
+  color: #008F11;
   background-color: black;
   box-sizing: border-box;
   width: 100%;
@@ -78,28 +78,57 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 a {
+  display: inline-block;
+  position: relative;
   text-decoration: none;
+  color: #00FF41;
+}
+a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #00FF41;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+}
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 h2 {
-  font-size: 32px;
   font-weight: lighter;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  font-size: clamp(20px, 6vw, 32px);
+  font-weight: bold;
 }
 h2 span {
   font-weight: bold;
-  color: #00ff0d;
+  color: #00FF41;
 }
 
 section {
   margin: 0 auto;
   padding-top: 100px;
   padding-bottom: 300px;
+}
+
+.highlight {
+  color: rgb(71, 224, 0);
 }
 
 .content {
@@ -121,6 +150,11 @@ section {
     padding: 0 30px;
   }
 }
+@media (max-width: 400px) {
+  .content {
+    padding: 0 25px;
+  }
+}
 
 .home_sec {
   display: flex;
@@ -131,30 +165,31 @@ section {
   padding: 0;
 }
 .home_sec .heading_text {
-  font-size: clamp(40px, 10vw, 80px);
+  font-size: clamp(22px, 13vw, 80px);
   font-weight: 400;
   line-height: 1.1;
   margin: 0 0 50px 0;
-  color: #00ff0d;
+  color: #00FF41;
 }
 .home_sec .desc_text {
   max-width: 600px;
 }
-.home_sec span {
-  font-weight: 400;
-  color: #00ff0d;
+.home_sec span:not(.intro) {
+  font-weight: bold;
+  color: #00FF41;
+}
+.home_sec .intro {
+  color: rgb(71, 224, 0);
 }
 
 .about_sec {
   max-width: 1200px;
   display: block;
 }
-.about_sec h2 {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  font-size: clamp(20px, 6vw, 32px);
+@media (max-width: 400px) {
+  .about_sec {
+    font-size: 16px;
+  }
 }
 .about_sec .inner {
   display: grid;
@@ -167,7 +202,7 @@ section {
   border-radius: 5px;
   width: 300px;
   height: 300px;
-  box-shadow: 20px 20px black, 20px 20px 0 2px #00ff0d;
+  box-shadow: 20px 20px black, 20px 20px 0 2px #00FF41;
   transition: box-shadow 0.5s ease-in-out;
 }
 @media (max-width: 400px) {
@@ -194,7 +229,7 @@ section {
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  background-color: rgba(50, 158, 0, 0.4);
+  background-color: rgba(0, 143, 17, 0.4);
   transform: translateY(0);
   transition: background-color 0.5s ease-in-out;
 }
@@ -203,7 +238,7 @@ section {
   background-color: rgba(0, 0, 0, 0);
 }
 .about_sec .inner .headshot_container:hover {
-  box-shadow: 0 0 0 0 #00ff0d;
+  box-shadow: 0 0 0 0 #00FF41;
   transition: box-shadow 0.5s ease-in-out;
 }
 @media (max-width: 1200px) {
@@ -217,8 +252,19 @@ section {
   }
 }
 
-.skills_sec h2 {
-  font-size: clamp(20px, 6vw, 32px);
+.skills_sec {
+  padding-left: -50px;
+  padding-right: -50px;
+}
+@media (max-width: 580px) {
+  .skills_sec p {
+    font-size: 14px !important;
+  }
+}
+@media (max-width: 400px) {
+  .skills_sec p {
+    font-size: 13px !important;
+  }
 }
 
 .skills_container {
@@ -228,16 +274,16 @@ section {
   grid-row-gap: 0;
   grid-column-gap: 0;
 }
-.skills_container .header1 {
+.skills_container .tech_header {
   grid-area: 1/1/2/2;
 }
-.skills_container .header2 {
+.skills_container .beginner_header {
   grid-area: 1/2/2/3;
 }
-.skills_container .header3 {
+.skills_container .proficient_header {
   grid-area: 1/3/2/4;
 }
-.skills_container .header4 {
+.skills_container .expert_header {
   grid-area: 1/4/2/5;
 }
 .skills_container .skill_level_con {
@@ -249,7 +295,7 @@ section {
   justify-content: center;
   align-items: center;
   margin: 0;
-  color: #00ff0d;
+  color: #00FF41;
   font-size: 20px !important;
 }
 @media (max-width: 700px) {
@@ -264,13 +310,22 @@ section {
 }
 @media (max-width: 400px) {
   .skills_container .header {
-    font-size: 14px !important;
+    font-size: 13px !important;
   }
+}
+.skills_container .tech_header, .skills_container .skill_name {
+  border-right: 1px solid #008F11;
+}
+.skills_container .beginner_header {
+  margin-left: 2px;
+  margin-right: 5px;
+}
+.skills_container .proficient_header {
+  margin-right: 2px;
 }
 .skills_container .skill_name {
   margin-left: 10px;
-  border-right: 1px solid rgb(50, 158, 0);
-  padding-bottom: 20px;
+  padding-top: 15px;
   white-space: nowrap;
   padding-right: 5px;
 }
@@ -285,7 +340,7 @@ section {
   }
 }
 .skills_container .skill_level_con p {
-  margin-bottom: 20px;
+  margin-top: 15px;
   margin-left: 5px;
 }
 @media (max-width: 580px) {
@@ -296,5 +351,107 @@ section {
 @media (max-width: 400px) {
   .skills_container .skill_level_con p {
     font-size: 13px !important;
+  }
+}
+
+.experience_sec {
+  max-width: 700px !important;
+}
+.experience_sec .experience_container {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.experience_sec .experience_container .experience_name_column p {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.experience_sec .experience_container .experience_name_column p:hover {
+  transition: 0.2s ease-in-out;
+  background-color: #00FF41;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+.experience_sec .experience_container .experience_name_column p:not(:hover) {
+  transition: 0.2s ease-in-out;
+}
+.experience_sec .experience_container .experience_name_column .job_selected {
+  background-color: #00FF41;
+  color: black;
+  font-weight: bold;
+}
+.experience_sec .experience_container .experience_desc .job_desc_header {
+  color: #008F11;
+}
+.experience_sec .experience_container .experience_desc li {
+  list-style-type: "";
+  line-height: 2rem;
+}
+.experience_sec .experience_container .experience_desc li::before {
+  content: ">";
+  color: #00FF41;
+}
+.experience_sec .experience_container .experience_desc ul > li {
+  margin-left: 25px;
+}
+.experience_sec .experience_container .experience_desc .job_tech_con {
+  display: flex;
+  min-width: 50%;
+}
+.experience_sec .experience_container .experience_desc .job_tech_con div {
+  flex: 1;
+}
+.experience_sec .experience_container .experience_desc #techHeader {
+  margin-top: 20px;
+}
+@media (max-width: 850px) {
+  .experience_sec .experience_container {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    display: block;
+  }
+  .experience_sec .experience_container .experience_name_column {
+    width: 70vw;
+    height: 100%;
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  .experience_sec .experience_container .experience_name_column::-webkit-scrollbar {
+    height: 5px;
+  }
+  .experience_sec .experience_container .experience_name_column::-webkit-scrollbar-track {
+    background: black;
+    padding-top: 50px;
+  }
+  .experience_sec .experience_container .experience_name_column::-webkit-scrollbar-thumb {
+    background-color: #008F11;
+    outline: 1px solid #008F11;
+    border-radius: 5px;
+  }
+  .experience_sec .experience_container .experience_name_column p {
+    white-space: nowrap;
+    font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .experience_sec .experience_name_column p {
+    font-size: 14px;
+    padding: 10px !important;
+  }
+  .experience_sec .job_tech_con {
+    display: block !important;
+    min-width: 50%;
+  }
+  .experience_sec .experience_desc {
+    font-size: 16px;
   }
 }/*# sourceMappingURL=main.css.map */

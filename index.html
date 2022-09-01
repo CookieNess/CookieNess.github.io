@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/job_desc.js"></script>
     <link rel="stylesheet" href="styles/main.css">
     <title>Portfolio</title>
 </head>
@@ -27,7 +28,7 @@
         <section class="home_sec">
             <p class="heading_text"><span>&gt; hello </span><span>world</span></p>
             <p class="desc_text">
-                <span>&gt;</span> My name is Frederik Kjærgaard (Kjaergaard for English). <br><br> 
+                <span>&gt;</span><span class="intro"> My name is Frederik Kjærgaard (Kjaergaard for English).</span><br><br> 
                 <span>&gt;</span> I am a Danish software engineering student.<br><br> 
                 <span>&gt;</span> I specialise in full-stack programming. <br><br>
                 <span>&gt;</span> On top of everything - I am an elite dancer in Popping.
@@ -38,12 +39,22 @@
             <h2><span>&gt;</span> &nbsp; who_am_i</h2>
             <div class="inner">
                 <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. <br><br> 
-                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    Hello there world! My name is Frederik Kjærgaard
+                    (Kjaergaard in Egnlish) and I am Danish software engineering student,
+                    at the Technical University of Denmark.
+                    I am currently on my last year of my bachelor's degree, where I am starting my
+                    master in Information Technology in September 2023. 
+                    <br><br>
+                    I enjoy programming in every high-level way, as I specialise in full-stack development.
+                    I love everything from front-end to back-end, to database management.
+                    <br><br>
+                    My knowledge is based upon my education, previous personal projects and
+                    work experience. 
+                    <br><br>
+                    <span class="highlight">HOWEVER</span>, programming is not the only thing I know how to do.
+                    Check out <a href="https://app.diplomasafe.com/en-US/diploma/d89c0024072e060ca525d4ca0163e3d4b0c49c013">this certificate</a>
+                     in Project Management, I got through my university!
+
                 </p>
                 <div class="headshot_container">
                     <img src="img/headshot.jpg" id="headshot" alt="Picture of Frederik Kjaergaard">
@@ -55,19 +66,19 @@
         <section class="skills_sec">
             <h2><span>&gt;</span> &nbsp; my_skills</h2>
             <div class="skills_container">
-                <div class="header1 header">
+                <div class="tech_header header">
                     <p>Technology</p>
                 </div>
                 <div id="skillNameContainer">
                     
                 </div>
-                <div class="header2 header">
+                <div class="beginner_header header">
                     <p>Beginner</p>
                 </div>
-                <div class="header3 header">
+                <div class="proficient_header header">
                     <p>Proficient</p>
                 </div>
-                <div class="header4 header">
+                <div class="expert_header header">
                     <p>Expert</p>
                 </div>
                 <div class="skill_level_con" id="skillContainer">
@@ -76,6 +87,26 @@
             
         </section>
         <section class="experience_sec">
+            <h2><span>&gt;</span> &nbsp; my_experience</h2>
+            <div class="experience_container">
+                <div class="experience_name_column" id="experienceNameColumn">
+                    <p id="haveliv" class="job job_selected">Have & Livsstil ApS</p>
+                    <p id="sneholt" class="job">Sneholt & Nilsen A/S</p>
+                    <p id="reinhardt" class="job">Reinhardt Dans ApS</p>
+                </div>
+                <div class="experience_desc" >
+                    <p class="job_desc_header" id="jobHeader"></p>
+                    <p class="job_desc_time" id="jobTime"></p>
+                    <br>
+                    <p class="job_desc" id="jobDesc">
+                    <p id="techHeader"></p>
+                    <div class="job_tech_con" id="jobTechContainer">
+                        <div id="techList1"></div>
+                        <div id="techList2"></div>
+                    </div>
+                    </p>
+                </div>
+            </div>
     
         </section>
         <section class="projects_sec">

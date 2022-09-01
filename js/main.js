@@ -73,42 +73,6 @@ function typeText(textID, text, i) { // General function to create typing animat
     }
 }
 
-// function addSkillLevel(container, level, skillLineNumber) {
-//     let counter = 0;
-//     let text = "helloworld";
-//     container.append("<p><span id='skillTextWidth" + skillLineNumber + "'></span></p>");
-//     let widthOfContainer = 0;
-//     switch (level) {
-//         case 0:
-//             widthOfContainer = $(container).width() - 
-//                 (($(container).width() / 3 + ($(container).width() / 3) + ($(container).width() / 3) / 2));
-//             break;
-//         case 1:
-//             widthOfContainer = $(container).width() - 
-//                 (($(container).width() / 3 + ($(container).width() / 3) / 2));
-//             break;
-//         case 2:
-//             widthOfContainer = $(container).width() - 
-//                 (($(container).width() / 3) / 2);
-//             break;
-//     }
-//     for (let i = 0; i < text.length; i++) {
-//         $("#skillTextWidth" + skillLineNumber).get(0).innerHTML += text.charAt(i);
-        
-//         widthOfSpan = $("#skillTextWidth" + skillLineNumber).width();
-//         if (counter > 1000) {
-//             console.error("Counter overflow");
-//             break;
-//         }
-//         if (widthOfSpan >= widthOfContainer) {
-//             break;
-//         } else if (i+1 >= text.length) {
-//             i = -1;
-//         }
-//         counter++;
-//     }
-// }
-
 function addSkillLevel(container, level, skillLineNumber) {
     let counter = 0;
     let text = "helloworld";
@@ -128,7 +92,7 @@ function addSkillLevel(container, level, skillLineNumber) {
                 (($(container).width() / 3) / 2);
             break;
     }
-    //$("#skillTextWidth" + skillLineNumber).css("visibility", "hidden");
+
     for (let i = 0; i < text.length; i++) {
         $("#skillTextWidth" + skillLineNumber).get(0).innerHTML += text.charAt(i);
         widthOfSpan = $("#skillTextWidth" + skillLineNumber).width();
@@ -146,5 +110,3 @@ function addSkillLevel(container, level, skillLineNumber) {
         counter++;
     }
 }
-
-

@@ -20,18 +20,43 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden
 }
 
 a {
+    display: inline-block;
+    position: relative;
     text-decoration: none;
+    color: $fontColorHighlight;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $fontColorHighlight;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+    }
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;    
+    }
 }
 
 h2 { // Section headers
-    font-size: $fontSizeHeader;
     font-weight: lighter;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    font-size: clamp($fontSizeXL, 6vw, $fontSizeHeader);
+    font-weight: bold;
     span {
         font-weight: bold;
         color: $fontColorHighlight;
@@ -42,6 +67,10 @@ section {
     margin: 0 auto;
     padding-top: 100px;
     padding-bottom: 300px;
+}
+
+.highlight {
+    color: $fontColorBetween;
 }
 
 .content { // All sections
@@ -56,7 +85,7 @@ section {
     @media (max-width: 600px) {
         padding: 0 30px;
     } 
-    // @media (max-width: 380px) {
-    //     padding: 0 10px;
-    // }
+    @media (max-width: 400px) {
+        padding: 0 25px;
+    }
 }
