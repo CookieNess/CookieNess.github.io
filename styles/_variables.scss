@@ -1,12 +1,13 @@
-// Variables
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Ubuntu+Mono:wght@400;700&display=swap');
+
+// Colors
 $backgroundColorPrim: black;
+$highlightColor: #00FF41;
+$accentColor: #039e04;
+$textColor: #237a46;
 $transitionPrim: 0.5s ease-in-out;
 
-$fontFamilyPrim: 'Ubuntu';
-$fontColorPrim: #008F11;
-$fontColorHighlight: #00FF41;
-$fontColorBetween: rgb(71, 224, 0);
-
+// Font Properties
 $fontSizeXXS: 12px;
 $fontSizeXS: 13px;
 $fontSizeS: 14px;
@@ -16,16 +17,40 @@ $fontSizeXL: 20px;
 $fontSizeXXL: 22px;
 $fontSizeHeader: 32px;
 
-// Mixins
-@mixin flex_center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+$textFont: 'Ubuntu Mono';
+$subHeaderFont: 'Roboto Mono';
+@mixin headerFont {
+    font-family: 'Ubuntu Mono';
+    font-weight: 700;
 }
 
-@mixin jobSelector {
-    background-color: $fontColorHighlight;
-    color: black;
-    font-weight: bold;
+.highlight {
+    color: $highlightColor
+}
+
+.accent {
+    color: $accentColor;
+}
+
+// Others
+
+@mixin scrollbar {
+    // Chromium
+    &::-webkit-scrollbar {
+        width: 7px;
+        height: 5px;
+        
+    }
+    &::-webkit-scrollbar-track {
+        background: $backgroundColorPrim;
+        
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $highlightColor;
+        outline: 1px solid $highlightColor;
+        border-radius: 5px;
+    }
+
+    // Firefox
+    //TODO: implement firefox support for scrollbar
 }

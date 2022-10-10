@@ -1,0 +1,100 @@
+.skills_sec {    
+    height: 80vh;
+    .skills_container {
+        width: 100%;
+        height: 100%;
+        overflow-x: auto;
+        display: grid;
+        margin-bottom: 50px;
+        margin-top: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 10% 80%;
+        grid-row-gap: 0;
+        grid-column-gap: 0;
+        .tech_header {grid-area: 1 / 1 / 2 / 2;}
+        .beginner_header {grid-area: 1 / 2 / 2 / 3;}
+        .proficient_header {grid-area: 1 / 3 / 2 / 4;}
+        .expert_header {grid-area: 1 / 4 / 2 / 5;}
+
+        .skill_level_con {grid-area: 2 / 2 / 9 / 5;}
+        .header :not(.tech_header){
+            margin-bottom: 20px;
+            margin-right: 20px !important;
+            display: flex;
+            margin: 0;
+            justify-content: center;
+            color: $accentColor;
+            font-size: clamp($fontSizeS, 8vw, $fontSizeXXL);
+        }
+        .header {
+            margin-top: 10px;
+        }
+        .tech_header, .skill_name_container {
+            border-right: 1px solid $textColor;
+            background-color: $backgroundColorPrim;
+        }
+        .beginner_header {
+            margin-left: 2px;
+            margin-right: 5px;
+        }
+        .proficient_header {
+            margin-right: 2px;
+        }
+        .skill_name_container {
+            left: 0;
+            position: sticky;
+            margin-bottom: 5px;
+            background: rgba($backgroundColorPrim, 0.3);
+            backdrop-filter: blur(15px);
+        }
+        .skill_name {
+            margin-left: 10px;
+            padding-top: 15px;
+            white-space: nowrap;
+            padding-right: 5px;
+            color: $accentColor;
+        }
+        .skill_level_con {
+            p {
+                margin-top: 15px;
+                margin-left: 5px;
+            }
+        }
+        @include scrollbar;
+    }
+
+    .other_tech_con {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        margin-left: 20px;
+        ul {
+            list-style: none;
+        }
+        li::before {
+            content: ">";
+            color: $accentColor;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+        div {
+            width: 300px;
+        }
+    }
+
+    padding-left: 200px;
+    padding-right: 200px;
+    @media (max-width: 1300px) {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    @media (max-width: 970px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    @media (max-width: 600px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

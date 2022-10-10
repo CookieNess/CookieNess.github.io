@@ -5,35 +5,28 @@
 }
 
 body {
-    font: {
-        size: $fontSizeL;
-        family: $fontFamilyPrim;
-    }
-    line-height: 1.5;
-    color: $fontColorPrim;
+    font-size: $fontSizeXL;
+    font-family: $textFont;
+    color: $textColor;
     background-color: $backgroundColorPrim;
     box-sizing: border-box;
     width: 100%;
     scroll-behavior: smooth;
     min-height: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden
+    @include scrollbar;
 }
 
 a {
     display: inline-block;
     position: relative;
     text-decoration: none;
-    color: $fontColorHighlight;
+    color: $highlightColor;
     &::after {
         content: '';
         position: absolute;
         bottom: 0;
         left: 0;
-        background-color: $fontColorHighlight;
+        background-color: $highlightColor;
         transform-origin: bottom right;
         transition: transform 0.25s ease-out;
         width: 100%;
@@ -46,21 +39,10 @@ a {
     }
 }
 
-h2 { // Section headers
-    font-weight: lighter;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    font-size: clamp($fontSizeXL, 6vw, $fontSizeHeader);
-    font-weight: bold;
-    span {
-        font-weight: bold;
-        color: $fontColorHighlight;
-    }
+h2 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    color: $accentColor;
+    @include headerFont;
 }
 
 section {
@@ -69,23 +51,16 @@ section {
     padding-bottom: 300px;
 }
 
-.highlight {
-    color: $fontColorBetween;
-}
-
-.content { // All sections
-    max-width: 1500px;
-    padding: 0 250px;
-    @media (max-width: 1200px) {
-        padding: 0 150px;
-    } 
-    @media (max-width: 930px) {
-        padding: 0 100px;
-    }
-    @media (max-width: 600px) {
-        padding: 0 30px;
-    } 
+.content_container { // All sections
+    $paddingClamp: clamp(0.5rem, 15vw, 15rem);
+    padding-left: $paddingClamp;
+    padding-right: $paddingClamp;
     @media (max-width: 400px) {
         padding: 0 25px;
     }
 }
+
+.accent_color {
+    color: $accentColor;
+}
+

@@ -1,7 +1,7 @@
 #terminal_overlay {
     opacity: 1;
     background-color: $backgroundColorPrim;
-    position: absoute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -10,7 +10,7 @@
 
 #terminal_text {
     z-index: 9999;
-    color: $fontColorHighlight;
+    color: $highlightColor;
     overflow: visible;
     padding-left: 30%;
     padding-top: 10%;
@@ -21,7 +21,7 @@
     margin-bottom: -2px;
     height: 15px;
     margin-left: -1px;
-    border-right: 7px solid $fontColorHighlight;
+    border-right: 7px solid $highlightColor;
     animation: blink_cursor 0.9s steps(2, start) infinite;
     z-index: 9999;
 }

@@ -1,0 +1,75 @@
+.about_sec {
+    line-height: 2;
+    display: block;
+    .first {
+        padding-bottom: 50px;
+    }
+    .about_sec_container {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        .first_img {
+            margin-left: 100px;
+        }
+        .second_img {
+            margin-right: 100px;
+        }
+        .headshot_container {
+            display: block;
+            position: relative;
+            border-radius: 5px;
+            width: 300px;
+            height: 300px;
+            box-shadow: 20px 20px $backgroundColorPrim, 20px 20px 0 2px $highlightColor;
+            transition: box-shadow $transitionPrim;
+            @media(max-width: 500px) {
+                width: 200px;
+                height: 200px;
+            }
+            img {
+                display: block;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                margin: 0;
+                max-width: none;
+                border-radius: 5px;
+            }
+            div {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                background-color: rgba($textColor, 0.4);
+                transform: translateY(0);
+                transition: background-color $transitionPrim;
+            }
+            div:hover {
+                transition: background-color $transitionPrim;
+                background-color: rgba(0,0,0,0);
+            }
+            &:hover {
+                box-shadow: 0 0 0 0 $highlightColor;
+                transition: box-shadow $transitionPrim;
+            }
+        }
+        @media (max-width: 1200px) {
+            grid-template-columns: 4fr;
+            .headshot_container {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+            }
+        }
+    }
+    @media (max-width: 1200px) {
+        .second {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+}

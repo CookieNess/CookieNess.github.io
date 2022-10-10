@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/job_desc.js"></script>
+    <!-- <script src="js/job_desc.js"></script> -->
     <link rel="stylesheet" href="styles/main.css">
     <title>Portfolio</title>
 </head>
 <body>
-    <div class="topnav">
+    <!-- <div class="topnav">
         <div class="topnav_logo">
             <a href="#home">PIC</a>
         </div>
@@ -23,42 +23,61 @@
             <a href="#dance">.dance()</a>
             <a href="#conatct">.contact()</a>
         </div>
-    </div>
-    <div class="content">
+    </div> -->
+    <div class="content_container">
         <section class="home_sec">
-            <p class="heading_text"><span>&gt; hello </span><span>world</span></p>
+            <h2 class="heading_text"><span>&gt; hello </span><span>world</span></h2>
             <p class="desc_text">
                 <span>&gt;</span><span class="intro"> My name is Frederik Kjærgaard (Kjaergaard for English).</span><br><br> 
                 <span>&gt;</span> I am a Danish software engineering student.<br><br> 
-                <span>&gt;</span> I specialise in full-stack programming. <br><br>
+                <span>&gt;</span> I specializes in full-stack programming. <br><br>
                 <span>&gt;</span> On top of everything - I am an elite dancer in Popping.
-                
             </p>
+            <p class="tag_text">&lt;portfolio&gt;</p>
+            <span class="scroll_animation"></span>
+            <div class="tag_text scroll_text">
+                <p>&lt;scroll&gt;</p>
+            </div>
+            <div class="tag_text scroll_text">
+                <p>&lt;scroll&gt;</p>
+            </div>
+            <div class="tag_text scroll_text">
+                <p>&lt;scroll&gt;</p>
+            </div>
         </section>
         <section class="about_sec">
             <h2><span>&gt;</span> &nbsp; who_am_i</h2>
-            <div class="inner">
-                <p>
-                    Hello there world! My name is Frederik Kjærgaard
-                    (Kjaergaard in Egnlish) and I am Danish software engineering student,
-                    at the Technical University of Denmark.
-                    I am currently on my last year of my bachelor's degree, where I am starting my
-                    master in Information Technology in September 2023. 
-                    <br><br>
-                    I enjoy programming in every high-level way, as I specialise in full-stack development.
-                    I love everything from front-end to back-end, to database management.
-                    <br><br>
-                    My knowledge is based upon my education, previous personal projects and
-                    work experience. 
-                    <br><br>
-                    <span class="highlight">HOWEVER</span>, programming is not the only thing I know how to do.
-                    Check out <a href="https://app.diplomasafe.com/en-US/diploma/d89c0024072e060ca525d4ca0163e3d4b0c49c013">this certificate</a>
-                     in Project Management, I got through my university!
-
-                </p>
-                <div class="headshot_container">
-                    <img src="img/headshot.jpg" id="headshot" alt="Picture of Frederik Kjaergaard">
-                    <div></div>
+            <div class="about_sec_content">
+                <div class="about_sec_container first">
+                    <p>
+                        Hello there world! My name is Frederik Kjærgaard
+                        (Kjaergaard in English) and I am Danish software engineering student,
+                        at the Technical University of Denmark.
+                        I am currently on my last year of my bachelor's degree, where I am starting my
+                        master in Information Technology in September 2023. 
+                    </p>
+                    
+                    <div class="headshot_container first_img">
+                        <img src="img/headshot.jpg" id="headshot" alt="Picture of Frederik Kjaergaard">
+                        <div></div>
+                    </div>
+                </div>
+                <div class="about_sec_container second">
+                    <div class="headshot_container second_img">
+                        <img src="img/headshot.jpg" id="headshot" alt="Picture of Frederik Kjaergaard">
+                        <div></div>
+                    </div>
+                    <p>
+                        I enjoy programming in every high-level way, as I specialize in full-stack development.
+                        I love everything from front-end to back-end, to database management.
+                        <br><br>
+                        My knowledge is based upon my education, previous personal projects and
+                        work experience. 
+                        <br><br>
+                        <span class="accent_color">HOWEVER</span>, programming is not the only thing I know how to do.
+                        Check out <a href="https://app.diplomasafe.com/en-US/diploma/d89c0024072e060ca525d4ca0163e3d4b0c49c013">this certificate</a>
+                        in Project Management, I got through my university!
+                    </p>
                 </div>
             </div>
         </section>
@@ -69,7 +88,7 @@
                 <div class="tech_header header">
                     <p>Technology</p>
                 </div>
-                <div id="skillNameContainer">
+                <div class="skill_name_container" id="skillNameContainer">
                     
                 </div>
                 <div class="beginner_header header">
@@ -84,30 +103,34 @@
                 <div class="skill_level_con" id="skillContainer">
                 </div>
             </div>
-            
+            <p class="accent">Some other, but not limited to, technologies I have worked with:</p>
+            <div class="other_tech_con">
+                <div class="left">
+                    <ul>
+                        <li>React</li>
+                        <li>jQuery</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li>SCSS</li>
+                        <li>WordPress</li>
+                    </ul>
+                </div>
+            </div>
         </section>
         <section class="experience_sec">
             <h2><span>&gt;</span> &nbsp; my_experience</h2>
-            <div class="experience_container">
-                <div class="experience_name_column" id="experienceNameColumn">
-                    <p id="haveliv" class="job job_selected">Have & Livsstil ApS</p>
-                    <p id="sneholt" class="job">Sneholt & Nilsen A/S</p>
-                    <p id="reinhardt" class="job">Reinhardt Dans ApS</p>
+            <div class="experience_con">
+                <div class="jobs_list">
+
                 </div>
-                <div class="experience_desc" >
-                    <p class="job_desc_header" id="jobHeader"></p>
-                    <p class="job_desc_time" id="jobTime"></p>
-                    <br>
-                    <p class="job_desc" id="jobDesc">
-                    <p id="techHeader"></p>
-                    <div class="job_tech_con" id="jobTechContainer">
-                        <div id="techList1"></div>
-                        <div id="techList2"></div>
-                    </div>
-                    </p>
+                <div class="job_desc_con">
+                    <p class="job_title"></p>
+                    <p class="job_duration"></p>
+                    <div class="job_desc"></div>
                 </div>
             </div>
-    
         </section>
         <section class="projects_sec">
     

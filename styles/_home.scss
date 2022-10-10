@@ -1,0 +1,37 @@
+.home_sec {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    .heading_text {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        color: $highlightColor;
+        white-space: nowrap;
+    }
+    .desc_text {
+        .intro {
+            color: $accentColor;
+        }
+    }
+    .tag_text {
+        align-self: center;
+        padding-top: clamp(20px, 10vh, 100px);
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+    .scroll_text {
+        padding-top: 5px;
+    }
+    .scroll_animation {
+        display: block;
+        height: 40px;
+        width: 100%;
+        background: $backgroundColorPrim;
+        animation: scroll_animation 2s linear infinite;
+    }
+}
+
+@keyframes scroll_animation {
+    to {
+        transform: translateY(250px);
+    }
+}
