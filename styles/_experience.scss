@@ -1,0 +1,58 @@
+.experience_sec {
+    padding-top: 300px;
+    .experience_con {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        margin-top: 50px;
+        .jobs_list {
+            div {
+                font-size: $fontSizeS;
+                padding: 5px;
+                border-left: 2px solid $textColor;
+            }
+            div:hover {
+                color: $highlightColor;
+            }
+        }
+        .job_desc_con {
+            .job_title {
+                color: $accentColor;
+                font-size: $fontSizeXXL;
+                margin-bottom: 5px;
+            }
+            .job_duration {
+                margin-bottom: 20px;
+                font-size: $fontSizeL;
+                color: $accentColor;
+            }
+            .job_desc {
+                li {
+                    margin-bottom: 15px;
+                    font-size: $fontSizeL ;
+                }
+                margin-left: 20px;
+            }
+        }
+    }
+    $padding_experience: 200px;
+    padding-left: $padding_experience;
+    padding-right: $padding_experience;
+    @media (max-width: 1300px) {
+        padding-left: calc($padding_experience / 2);
+        padding-right: calc($padding_experience / 2);
+    }
+    @media (max-width: 970px) {
+        padding-left: calc(($padding_experience / 2) / 2);
+        padding-right: calc(($padding_experience / 2) / 2);
+    }
+    @media (max-width: 600px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.job_active {
+    border-left: 2px solid $highlightColor !important;
+    color: $highlightColor;
+}

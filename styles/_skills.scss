@@ -1,5 +1,5 @@
 .skills_sec {    
-    height: 80vh;
+    height: 100vh;
     .skills_container {
         width: 100%;
         height: 100%;
@@ -68,32 +68,19 @@
         flex-direction: row;
         margin-top: 20px;
         margin-left: 20px;
-        ul {
-            list-style: none;
-        }
-        li::before {
-            content: ">";
-            color: $accentColor;
-            display: inline-block; 
-            width: 1em;
-            margin-left: -1em;
-        }
         div {
             width: 300px;
         }
     }
 
-    padding-left: 200px;
-    padding-right: 200px;
+    $padding_skills: 100px;
+    padding-left: $padding_skills;
+    padding-right: $padding_skills;
     @media (max-width: 1300px) {
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: calc($padding_skills / 2);
+        padding-right: calc($padding_skills / 2);
     }
     @media (max-width: 970px) {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-    @media (max-width: 600px) {
         padding-left: 0;
         padding-right: 0;
     }

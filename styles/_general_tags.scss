@@ -51,6 +51,18 @@ section {
     padding-bottom: 300px;
 }
 
+ul {
+    list-style: none;
+}
+
+li::before {
+    content: ">";
+    color: $accentColor;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
 .content_container { // All sections
     $paddingClamp: clamp(0.5rem, 15vw, 15rem);
     padding-left: $paddingClamp;
