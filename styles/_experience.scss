@@ -1,5 +1,5 @@
 .experience_sec {
-    padding-top: 300px;
+    padding-top: 150px;
     .experience_con {
         display: flex;
         flex-direction: row;
@@ -8,14 +8,16 @@
         .jobs_list {
             div {
                 font-size: $fontSizeS;
-                padding: 5px;
+                padding: 10px 10px 10px 10px;
                 border-left: 2px solid $textColor;
+                margin-top: auto;
             }
             div:hover {
                 color: $highlightColor;
             }
         }
         .job_desc_con {
+            width: 100%;
             .job_title {
                 color: $accentColor;
                 font-size: $fontSizeXXL;

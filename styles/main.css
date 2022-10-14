@@ -139,6 +139,20 @@ section {
   margin: 0 auto;
   padding-top: 100px;
   padding-bottom: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+li::before {
+  content: ">";
+  color: #039e04;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 .content_container {
@@ -279,8 +293,8 @@ section {
 
 .skills_sec {
   height: 80vh;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 .skills_sec .skills_container {
   width: 100%;
@@ -370,34 +384,82 @@ section {
   margin-top: 20px;
   margin-left: 20px;
 }
-.skills_sec .other_tech_con ul {
-  list-style: none;
-}
-.skills_sec .other_tech_con li::before {
-  content: ">";
-  color: #039e04;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-}
 .skills_sec .other_tech_con div {
   width: 300px;
 }
 @media (max-width: 1300px) {
   .skills_sec {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (max-width: 970px) {
+  .skills_sec {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.experience_sec {
+  padding-top: 150px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+.experience_sec .experience_con {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-top: 50px;
+}
+.experience_sec .experience_con .jobs_list div {
+  font-size: 14px;
+  padding: 10px 10px 10px 10px;
+  border-left: 2px solid #237a46;
+  margin-top: auto;
+}
+.experience_sec .experience_con .jobs_list div:hover {
+  color: #00FF41;
+}
+.experience_sec .experience_con .job_desc_con {
+  width: 100%;
+}
+.experience_sec .experience_con .job_desc_con .job_title {
+  color: #039e04;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+.experience_sec .experience_con .job_desc_con .job_duration {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #039e04;
+}
+.experience_sec .experience_con .job_desc_con .job_desc {
+  margin-left: 20px;
+}
+.experience_sec .experience_con .job_desc_con .job_desc li {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+@media (max-width: 1300px) {
+  .experience_sec {
     padding-left: 100px;
     padding-right: 100px;
   }
 }
 @media (max-width: 970px) {
-  .skills_sec {
+  .experience_sec {
     padding-left: 50px;
     padding-right: 50px;
   }
 }
 @media (max-width: 600px) {
-  .skills_sec {
+  .experience_sec {
     padding-left: 0;
     padding-right: 0;
   }
+}
+
+.job_active {
+  border-left: 2px solid #00FF41 !important;
+  color: #00FF41;
 }/*# sourceMappingURL=main.css.map */
