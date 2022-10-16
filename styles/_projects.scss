@@ -1,0 +1,22 @@
+.projects_sec {
+    .projects_con {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 50px;
+        .project_card {
+            margin-right: 20px;
+            position: relative;
+            background-color: $highlightColor;
+            backdrop-filter: blur(15px);
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            p {
+                height: 100%;
+                width: 100%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}

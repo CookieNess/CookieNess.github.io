@@ -1,5 +1,5 @@
 .skills_sec {    
-    height: 80vh;
+    height: 100vh;
     .skills_container {
         width: 100%;
         height: 100%;
@@ -45,7 +45,7 @@
             position: sticky;
             background: rgba($backgroundColorPrim, 0.3);
             backdrop-filter: blur(15px);
-            height: 200%;
+            height: 100%;
         }
         .skill_name {
             margin-left: 10px;

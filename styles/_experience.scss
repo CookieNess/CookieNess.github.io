@@ -21,6 +21,7 @@
                 padding: 10px 10px 10px 10px;
                 border-left: 2px solid $textColor;
                 margin-top: auto;
+                cursor: pointer;
                 @media (max-width: 460px) {
                     border-bottom: 2px solid $textColor;
                     border-left: 0;

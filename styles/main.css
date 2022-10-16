@@ -293,7 +293,7 @@ li::before {
 }
 
 .skills_sec {
-  height: 80vh;
+  height: 100vh;
   padding-left: 100px;
   padding-right: 100px;
 }
@@ -354,7 +354,7 @@ li::before {
   background: rgba(0, 0, 0, 0.3);
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
-  height: 200%;
+  height: 100%;
 }
 .skills_sec .skills_container .skill_name {
   margin-left: 10px;
@@ -440,6 +440,7 @@ li::before {
   padding: 10px 10px 10px 10px;
   border-left: 2px solid #237a46;
   margin-top: auto;
+  cursor: pointer;
 }
 @media (max-width: 460px) {
   .experience_sec .experience_con .jobs_list div {
@@ -517,24 +518,62 @@ li::before {
   }
 }
 
+.projects_sec .projects_con {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 50px;
+}
+.projects_sec .projects_con .project_card {
+  margin-right: 20px;
+  position: relative;
+  background-color: #00FF41;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+.projects_sec .projects_con .project_card img {
+  width: 100%;
+  height: 100%;
+}
+.projects_sec .projects_con .project_card p {
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
 footer {
   position: fixed;
   bottom: 0;
   margin-left: calc(100vw - 50px);
 }
 footer .footer_con a {
+  all: unset;
   width: 100%;
   height: 10px;
 }
 footer .footer_con a img {
   filter: invert(64%) sepia(61%) saturate(795%) hue-rotate(80deg) brightness(103%) contrast(117%);
   margin-bottom: 10px;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+footer .footer_con a img:hover {
+  filter: unset;
+  background-color: #00FF41;
 }
 footer .footer_con a:hover {
-  transform: translateY(100%);
+  all: unset;
+}
+footer .footer_con a::after {
+  all: unset;
 }
 footer .footer_con .line {
   transform: translateX(50%);
   height: 15vh;
   border-left: 2px solid #039e04;
+}
+@media (max-width: 410px) {
+  footer {
+    visibility: hidden;
+  }
 }/*# sourceMappingURL=main.css.map */
