@@ -25,7 +25,9 @@ function changeJobDesc(jobsList, jobTitle, jobDuration, listItemOne, listItemTwo
         switch($(this).text()) {
             case "Sneholt & Nilsen":
                 $(jobTitle).append(
-                    'it_support.at("<a href="https://sneholt-nilsen.dk/">Sneholt & Nilsen</a>");'
+                    `it_support.at(
+                        "<a href="https://sneholt-nilsen.dk/">Sneholt & Nilsen</a>"
+                        );`
                     );
                 $(jobDuration).append(
                     'Jan. 2020 &rarr; Jul. 2021'
@@ -36,7 +38,9 @@ function changeJobDesc(jobsList, jobTitle, jobDuration, listItemOne, listItemTwo
                 break;
             case "Have & Livsstil":
                 $(jobTitle).append(
-                    'it_support.at("<a href="https://haveoglivsstil.dk/">Have & Livsstil</a>");'
+                    `it_support.at(
+                        "<a href="https://haveoglivsstil.dk/">Have & Livsstil</a>"
+                        );`
                     );
                 $(jobDuration).append(
                     'Jan. 2019 &rarr; Apr. 2020'
@@ -47,7 +51,9 @@ function changeJobDesc(jobsList, jobTitle, jobDuration, listItemOne, listItemTwo
                 break;
             case "Reinhardt Dans":
                 $(jobTitle).append(
-                    'website_developer.at("<a href="https://reinhardtdans.dk/">Reinhardt Dans</a>");'
+                    `website_developer.at(
+                        "<a href="https://reinhardtdans.dk/">Reinhardt Dans</a>"
+                        );`
                     );
                 $(jobDuration).append(
                     'May 2021 &rarr; Jan. 2022'

@@ -1,19 +1,38 @@
 .experience_sec {
     padding-top: 150px;
+    h2 {
+        @media (max-width: 330px) {
+            font-size: 1.8rem;
+        }
+    }
     .experience_con {
         display: flex;
         flex-direction: row;
         gap: 40px;
         margin-top: 50px;
         .jobs_list {
+            @media (max-width: 460px) {
+                overflow-x: auto;
+                padding-bottom: 10px;
+                @include scrollbar;
+            }
             div {
                 font-size: $fontSizeS;
                 padding: 10px 10px 10px 10px;
                 border-left: 2px solid $textColor;
                 margin-top: auto;
+                @media (max-width: 460px) {
+                    border-bottom: 2px solid $textColor;
+                    border-left: 0;
+                }
             }
             div:hover {
                 color: $highlightColor;
+            }
+            @media (max-width: 460px) {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 20px;
             }
         }
         .job_desc_con {
@@ -22,6 +41,9 @@
                 color: $accentColor;
                 font-size: $fontSizeXXL;
                 margin-bottom: 5px;
+                @media (max-width: 1045px) {
+                    white-space: pre-line;
+                }
             }
             .job_duration {
                 margin-bottom: 20px;
@@ -35,6 +57,9 @@
                 }
                 margin-left: 20px;
             }
+        }
+        @media (max-width: 460px) {
+            display: block;
         }
     }
     $padding_experience: 200px;
@@ -57,4 +82,8 @@
 .job_active {
     border-left: 2px solid $highlightColor !important;
     color: $highlightColor;
+    @media (max-width: 460px) {
+        border-bottom: 2px solid $highlightColor !important;
+        border-left: 0 !important;
+    }
 }

@@ -1,0 +1,23 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    margin-left: calc(100vw - 50px);
+    .footer_con {  
+        a {
+            width: 100%;
+            height: 10px;
+            img {
+                filter: invert(64%) sepia(61%) saturate(795%) hue-rotate(80deg) brightness(103%) contrast(117%);
+                margin-bottom: 10px;
+            } 
+            &:hover {
+                transform: translateY(100%);
+            }
+        }
+        .line {
+            transform: translateX(50%);
+            height: 15vh;
+            border-left: 2px solid $accentColor;
+        }
+    }
+}

@@ -27,7 +27,7 @@
             font-size: clamp($fontSizeS, 8vw, $fontSizeXXL);
         }
         .header {
-            margin-top: 10px;
+            z-index: 100;
         }
         .tech_header, .skill_name_container {
             border-right: 1px solid $textColor;
@@ -43,9 +43,9 @@
         .skill_name_container {
             left: 0;
             position: sticky;
-            margin-bottom: 5px;
             background: rgba($backgroundColorPrim, 0.3);
             backdrop-filter: blur(15px);
+            height: 200%;
         }
         .skill_name {
             margin-left: 10px;
