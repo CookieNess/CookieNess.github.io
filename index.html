@@ -7,6 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/job_desc.js"></script>
+    <script src="js/project_cards.js"></script>
     <!-- <script src="js/job_desc.js"></script> -->
     <link rel="stylesheet" href="styles/main.css">
     <title>Portfolio</title>
@@ -52,8 +53,8 @@
                 <div class="about_sec_container first">
                     <p>
                         Hello there world! My name is Frederik Kjærgaard
-                        (Kjaergaard in English) and I am Danish software engineering student,
-                        at the Technical University of Denmark.
+                        (Kjaergaard in English) and I am a <span class="accent_color">Danish software engineering student</span>,
+                        at the <span class="accent_color"> Technical University of Denmark</span>.
                         I am currently on my last year of my bachelor's degree, where I am starting my
                         master in Information Technology in September 2023. 
                     </p>
@@ -69,7 +70,7 @@
                         <div></div>
                     </div>
                     <p>
-                        I enjoy programming in every high-level way, as I specialize in full-stack development.
+                        I enjoy programming in every high-level way, as I <span class="accent_color">specialize in full-stack development</span>.
                         I love everything from front-end to back-end, to database management.
                         <br><br>
                         My knowledge is based upon my education, previous personal projects and
@@ -146,6 +147,7 @@
             </div>
         </section>
         <section class="projects_sec">
+            <h2><span>&gt;</span> &nbsp; my_projects</h2>
             <div class="projects_con" id="projectsCon">
                 <div class="project_card">
                     <img src="img/borsen_stock_game.png" alt="Stocks">
@@ -155,11 +157,20 @@
                     <img src="img/borsen_stock_game.png" alt="Stocks">
                     <p>Hello</p>
                 </div>
-                <div class="project_card">
+                <div class="project_card" onclick="openCardBSG()">
                     <img src="img/borsen_stock_game.png" alt="Stocks">
-                    <p>Hello</p>
+                    <p>Børsen Stock Game</p>
+                </div>
+                <div class="modal" id="borsenModal">
+                    <div class="modal_content">
+                        <span class="close_modal_btn">&times;</span>
+                        <p>Some text in the Modal..</p>
+                    </div>
                 </div>
             </div>
+        </section>
+        <section class="dance_sec">
+    
         </section>
         <section class="contact_sec">
     

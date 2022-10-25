@@ -6,17 +6,56 @@
         .project_card {
             margin-right: 20px;
             position: relative;
-            background-color: $highlightColor;
-            backdrop-filter: blur(15px);
+            // background-color: $highlightColor;
+            border-radius: 5px;
             img {
                 width: 100%;
                 height: 100%;
+                border-radius: 5px;
             }
             p {
+                border-radius: 5px;
                 height: 100%;
                 width: 100%;
-                transform: translate(-50%, -50%);
+                transform: translate(0, -102.1%);
+                backdrop-filter: blur(2px);
+                color: $accentColor;
+                background-color: rgba($highlightColor,0.3);
+                
             }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+    .close_modal_content {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        &:hover, &:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
     }
 }
